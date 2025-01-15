@@ -1,0 +1,218 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    overflow: hidden;
+}
+@font-face {
+    src: url(../fonts/PressStart2P-Regular.ttf);
+    font-family: "ps";
+}
+.game-board{
+    width: 100%;
+    height: 35vw;
+    border-bottom: 15px solid rgb(3, 214, 3);
+    margin: 0 auto ;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient( #87ceeb , #e0f6ff);
+}
+.pipe{
+    position: absolute;
+    bottom: 0;
+    width: 60px;
+    right: -80px;
+    animation: pipe-animation 1.5s infinite linear;
+}
+.mario{
+    width: 150px;
+    position: absolute;
+    bottom: 0;
+}
+.jump{
+    animation:jump 500ms ease-out
+}
+.clouds{
+    position: absolute;
+    width: 550px;
+    animation: clouds-animation 20s infinite linear;
+}
+#game-over {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    color: rgba(255, 0, 0, 0.603);
+    font-family: "ps";
+    display: none;
+    animation: mensagen 1s ease-out forwards;
+  }
+  .hidden {
+    display: none;
+  }
+  .moeda {
+    position: absolute;
+    bottom: 0;
+    width: 80px;
+    right: -80px;
+    animation: pipe-animation 2s infinite linear;
+  }
+  #parabens{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 60px;
+    color: rgba(255, 0, 0, 0.603);
+    font-family:  "ps";
+    display: none;
+    animation: mensagen 1s ease-out forwards;
+  }
+  #pontos {
+    height:6vw;
+    width: 40vh;
+    text-align:  left 5px;
+    font-family:  "ps";
+    font-size: 25px;
+    font-weight: bold;
+    color: #ffeb3b;
+    background-color: #1e1e2f;
+    padding-top: 35px ;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    margin-top: 8px;
+    margin-left:80%;
+    margin-bottom: 20px;
+  }
+  .nada{
+    height: 16vw;
+    background: linear-gradient(#A36031 , #895129 );
+  }
+
+
+
+ /* pagina de start */
+  .começo, html{
+    height: 100%; 
+    margin: 0;
+    padding: 0;
+  }
+  .começo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('../imagens/fundo-mario.jpg');
+  }
+  .start-inicio {
+    height: 400px;
+    width: 400px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.7);
+    padding: 40px 60px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    color: rgb(212, 209, 209);
+    animation: fadeIn 1s ease-out forwards; 
+}
+.start-inicio h1 {
+    margin-top: 25px;
+    text-align: center;
+    font-size: 50px;
+    color: #ffeb3b; 
+    font-family:  "ps"; 
+    animation: jump 1s ease-in-out infinite;
+}
+#button-start {
+    margin-top: 30px;
+    font-size: 22px;
+    font-family:  "ps";
+    padding: 20px 35px;
+    background-color:rgb(252, 19, 3); 
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    animation: buttonAnimation 0.5s ease-out;
+}
+#button-start:hover {
+    background-color: rgb(194, 32, 21);
+}
+.start-inicio h2 {
+    margin-top: 15px;
+    font-size: 25px;
+    color: #ffeb3b; 
+    font-family:  "ps";          
+}
+#record-display{
+    font-size: 18px;
+    color: #ffeb3b; 
+    margin-top: 35px;
+    font-family:  "ps";
+}
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes pipe-animation {
+    from {
+        right: 0;
+    }
+
+    to {
+       right: 100%; 
+    }
+}
+@keyframes jump{
+    0% {
+        bottom: 0;
+    }
+    40%{
+        bottom: 190px;
+    }
+    50% {
+        bottom: 190px;
+    }
+    60%{
+        bottom: 190px;
+    }
+    100% {
+        bottom: 0;
+    }
+    
+}
+@keyframes clouds-animation {
+    from{
+        right: -550px; 
+    }
+    to {
+        right: 100%;
+    }
+}
+@keyframes mensagen {
+    0% {
+      transform: translate(-50%, 50%);
+    }
+    100% {
+      transform: translate(-50%, -50%);
+    }
+}
+@keyframes buttonAnimation {
+    0% {
+        transform: scale(1);  
+    }
+    50% {
+        transform: scale(1.2);  
+    }
+    100% {
+        transform: scale(1);  
+    }
+}  
