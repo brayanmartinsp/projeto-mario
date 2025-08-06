@@ -108,7 +108,18 @@ const loop = setInterval(() => {
 
 }, 10); 
 
-document.addEventListener('keydown', jump); 
+document.addEventListener('keydown', (e) => {
+  if (e.code === 'Space' || e.code === 'ArrowUp') {
+    jump();
+  }
+});
+
+// No celular, dispara a função jump como se fosse um keydown da tecla "Space"
+document.addEventListener('touchstart', (e) => {
+  // evita múltiplos toques duplicados
+  e.preventDefault();
+  window.dispatchEvent(new KeyboardEvent('keydown', { key: ' ', code: 'Space' }));
+});
 
  
 const record = localStorage.getItem('record') || 0; 
