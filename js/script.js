@@ -108,15 +108,15 @@ const loop = setInterval(() => {
 
 }, 10); 
 
-// document.addEventListener('keydown', (e) => {
-//     if (e.code === 'Space' || e.code === 'ArrowUp') jump();
-// });
+ document.addEventListener('keydown', (e) => {
+    if (e.code === 'Space' || e.code === 'ArrowUp') jump();
+});
 
-// // ✅ Pulo com toque (corrigido)
-// document.addEventListener('touchstart', (e) => {
-//     e.preventDefault();
-//     jump(); // chamando a função diretamente
-// });
+
+document.addEventListener('touchstart', (e) => {
+    e.preventDefault();
+ jump(); // chamando a função diretamente
+ });
 
 document.addEventListener('touchstart', (e) => {
   e.preventDefault();
